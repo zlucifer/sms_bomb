@@ -12,7 +12,7 @@ echo " |                         | "
 sleep 0.03
 echo "  \._                   _./ "
 sleep 0.03
-echo "     '''--. . , ; .--'''    " 
+echo "     '''--. . , ; .--'''    "
 sleep 0.03
 echo "           | |   |           "
 sleep 0.03

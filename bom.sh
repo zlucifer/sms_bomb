@@ -68,6 +68,7 @@ else
         sleep 0.03
         if [ $i -eq 100 ]; then
             echo -ne " [complete!]\n"
+            echo "Jangan close Aplikasi sampai spam selesai"
             echo "========================================"
             target_do='http://zpro.000webhostapp.com/api/sms.php?nomor='$target'&paket='$paket
             CURL_RESPONSE=`curl -s -o /dev/null -w "%{http_code}" $target_do`

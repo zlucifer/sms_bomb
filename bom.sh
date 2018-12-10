@@ -41,7 +41,8 @@ echo "==   SMS Bomber Indonesia  =="
 sleep 0.7
 echo "============================="
 echo Selamat datang $nick ":)"
-cek='curl -s http://zpro.000webhostapp.com/index.php' # check status
+get_url=$(curl -s http://zlucifer.com/api/sms.php)
+cek='curl -s '$get_url # check status
 response=`curl -s -o /dev/null -w "%{http_code}" $cek`
 if [[ $response = *sleeping* ]]; then
     echo
@@ -68,9 +69,11 @@ else
         sleep 0.03
         if [ $i -eq 100 ]; then
             echo -ne " [complete!]\n"
-            echo "Jangan close Aplikasi sampai spam selesai"
+            echo "Jangan close aplikasi sebelum spam selesai"            
             echo "========================================"
-            target_do='http://zpro.000webhostapp.com/api/sms.php?nomor='$target'&paket='$paket
+            target_do=$get_url'/sms.php?nomor='$target'&paket='$paket
+
+
             CURL_RESPONSE=`curl -s -o /dev/null -w "%{http_code}" $target_do`
             echo " Gunakan tools dengan bijak"
             echo
